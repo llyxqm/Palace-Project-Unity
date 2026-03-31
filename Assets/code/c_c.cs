@@ -5,7 +5,8 @@ public class c_c : MonoBehaviour
     public float moveSpeed = 5f;        // 移动速度
     public float rotationSpeed = 10f;    // 转向平滑速度
     private CharacterController cc;      // 引用 CC 组件
-    public Transform cameraTrans;        // 引用相机的 Transform
+    public Transform cameraTrans;        // 引用相机
+    public Animator animator;  // 引用 Animator 组件
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class c_c : MonoBehaviour
         // 2. 如果没有任何输入，就直接跳过后面的逻辑（节省性能）
         if (Mathf.Abs(h) < 0.01f && Mathf.Abs(v) < 0.01f)
         {
-            // 虽然不走，但还是要应用重力，否则人在斜坡会悬空
+            animator.SetFloat("speed", 0);
             ApplyGravity();
             return;
         }
@@ -33,7 +34,6 @@ public class c_c : MonoBehaviour
         CamToPlayer.y = 0;
 
         // 4. 定义“前”和“右”
-        // 相机的反方向（从相机看玩家的方向）就是我们要前进的“前方”
         Vector3 camForward = CamToPlayer.normalized;
         // 利用向量叉乘：向上向量 叉乘 向前向量 = 向右向量
         Vector3 camRight = Vector3.Cross(Vector3.up, camForward).normalized;
@@ -41,7 +41,8 @@ public class c_c : MonoBehaviour
         // 5. 组合最终的移动方向
         // 最终方向 = (向前向量 * 纵向输入) + (向右向量 * 横向输入)
         Vector3 moveDir = (camForward * v + camRight * h).normalized;
-
+        //
+        animator.SetFloat("speed", moveSpeed);
         // 6. 执行位移：使用 CharacterController 的 Move 方法
         cc.Move(moveDir * moveSpeed * Time.deltaTime);
 
