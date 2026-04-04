@@ -5,12 +5,17 @@ using UnityEngine;
 public class cut_tree : MonoBehaviour 
 {
     public Animator animator;
-
+    public BoxCollider axe_collider;
     // Start is called before the first frame update
-    void Start()
+    public void StartSwing()
     {
+        axe_collider.enabled = true;
     }
 
+    public void EndSwing()
+    { 
+        axe_collider.enabled = false;
+    }
     // Update is called once per frame
     void Update()
     {
