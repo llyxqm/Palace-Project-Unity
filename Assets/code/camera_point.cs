@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class camera_p : MonoBehaviour
+public class camera_point : MonoBehaviour
 {
     public Transform player;
     public float sensitivity = 1.0f;
@@ -18,6 +18,7 @@ public class camera_p : MonoBehaviour
             enabled = false;
             return;
         }
+        transform.position = player.position + new Vector3(0, 2f, -5f); // 初始位置
         Vector3 offset = transform.position - player.position;
         Vector3 horizontalOffset = new Vector3(offset.x, 0, offset.z);// 水平偏移
         radius = horizontalOffset.magnitude; // 水平半径

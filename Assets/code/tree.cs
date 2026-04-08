@@ -40,7 +40,7 @@ public class tree : MonoBehaviour
         if (rb != null)
         {
             // 往反方向给一个瞬间的冲力
-            rb.AddForce(fallDirection * 10f, ForceMode.Impulse);
+            rb.AddForce(fallDirection * 30f, ForceMode.Impulse);
         }
 
     }
