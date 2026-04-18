@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class camera_point : MonoBehaviour
+public class Camera_point: MonoBehaviour
 {
     public Transform player;
     public float sensitivity = 1.0f;

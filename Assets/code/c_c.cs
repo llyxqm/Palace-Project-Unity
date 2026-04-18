@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class c_c : MonoBehaviour
+public class C_c: MonoBehaviour
 {
-    public float moveSpeed = 5f;        // 移动速度
+    public float moveSpeed = 5f;        
     public float rotationSpeed = 10f;    // 转向平滑速度
-    private CharacterController cc;      // 引用 CC 组件
-    public Transform cameraTrans;        // 引用相机
-    public Animator animator;  // 引用 Animator 组件
+    private CharacterController cc;      
+    public Transform cameraTrans;        
+    public Animator animator;  
 
     void Start()
     {
@@ -16,12 +16,11 @@ public class c_c : MonoBehaviour
 
     void Update()
     {
-        // 1. 获取输入：键盘的 WASD 或 摇杆
-        float h = Input.GetAxis("Horizontal"); // A/D 对应 -1 到 1
-        float v = Input.GetAxis("Vertical");   // W/S 对应 -1 到 1
+        float h = Input.GetAxis("Horizontal"); 
+        float v = Input.GetAxis("Vertical");  
 
         // 2. 如果没有任何输入，就直接跳过后面的逻辑（节省性能）
-        if (Mathf.Abs(h) < 0.01f && Mathf.Abs(v) < 0.01f)
+        if (Mathf.Abs(h) < 0.01f && Mathf.Abs(v) < 0.01f || animator.GetBool("build_room"))//修房子不能动
         {
             animator.SetFloat("speed", 0);
             ApplyGravity();

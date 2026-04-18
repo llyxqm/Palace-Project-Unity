@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class down_tree : MonoBehaviour
+public class Down_tree: MonoBehaviour
 {
     //private Quaternion woodqtpy = Quaternion.Euler(-90, 0, 0);//木头和树的旋转差
     //倾倒方向

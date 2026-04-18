@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tree : MonoBehaviour
+public class MyTree: MonoBehaviour
 {
     private Vector3 lasthintpoint;
     public int HP = 100;

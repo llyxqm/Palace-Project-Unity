@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class axe : MonoBehaviour
+public class Axe : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int max = 30;//背包容量
+    public static int id; 
+    public static int maxStack; 
     public int damage = 10;
     private void OnTriggerEnter(Collider other)
     {
@@ -12,7 +14,7 @@ public class axe : MonoBehaviour
         if (other.CompareTag("tree"))
         {
             // 2.
-            tree targetTree = other.GetComponent<tree>();
+            MyTree targetTree = other.GetComponent<MyTree>();
 
             // 3. 安全检查
             if (targetTree != null)

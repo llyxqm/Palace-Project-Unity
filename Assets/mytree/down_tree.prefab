@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd94ab8b8089254b9291a9b71ea0ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wood: {fileID: 2965873323187520803, guid: a79b053bf92f9bd4faf23af8aaba837d, type: 3}
+  wood: {fileID: 3449479443532167334, guid: df37e2145e2f3be4384031f5b0669f5b, type: 3}
   barycenter_py: -0.2
   head: {fileID: 4577566264561519734}
 --- !u!1001 &510882593111708933
